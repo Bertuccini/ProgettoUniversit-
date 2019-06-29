@@ -10,12 +10,19 @@ import org.springframework.web.bind.annotation.RestController;
 import model.StockRecords;
 import service.StockData;
 
+/**
+ * Questa classe restituisce le statisctiche basilari sugli attributi della collection tramite richiesta http (/stats)
+ * @author Filippo
+ *
+ */
 @RestController
 @RequestMapping("/stats")
 public class GetStats {
 	
-
-	//Metodo che restituisce le statistiche basilari per l'attributo "Latitudine" dei record in formato Json
+	/**
+	 * Metodo che restituisce le statistiche basilari per l'attributo "Latitudine" dei record in formato Json (/latitudine)
+	 * @return ritorna un oggetto Json contenente somma, media, minimo e massimo (con relativa via), deviazione standard
+	 */
 	@GetMapping ("/latitudine")
 	public static JSONObject getLatStats (){
 
@@ -63,7 +70,10 @@ public class GetStats {
 	
 }
     
-	//Metodo che restituisce le statistiche basilari per l'attributo "Longitudine" dei record in formato Json
+	/**
+	 * Metodo che restituisce le statistiche basilari per l'attributo "Longitudine" dei record in formato Json (/longitudine)
+	 * @return ritorna un oggetto Json contenente somma, media, minimo e massimo (con relativa via), deviazione standard
+	 */
 	@GetMapping ("/longitudine")
 	public static JSONObject getLonStats (){
 
@@ -113,7 +123,11 @@ public class GetStats {
 		
 }
 	
-	//Metodo che restituisce il numero di zone attive e non attive presenti nei record in formato Json
+
+	/**
+	 * /Metodo che restituisce il numero di zone attive e non attive presenti nei record in formato Json (/attività)
+	 * @return ritorna un oggetto Json con il numero di vie attive e non attive
+	 */
 	@GetMapping ("/attivita")
 	public static JSONObject getNumberofActiveAreas() {
 		
@@ -136,7 +150,11 @@ public class GetStats {
 		return obj;
 	}
 	
-	//Metodo che restituisce il conteggio del numero di vie presenti in ogni zona in formato Json
+
+	/**
+	 * Metodo che restituisce il conteggio del numero di vie presenti in ogni zona in formato Json (/zona)
+	 * @return ritorna un oggetto Json con il numero di vie per ogni zona
+	 */
 	@GetMapping ("/zona")
 	public static JSONObject getNumberofAddressinaZone () {
 		

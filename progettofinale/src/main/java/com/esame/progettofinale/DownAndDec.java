@@ -1,3 +1,4 @@
+
 package com.esame.progettofinale;
 
 import java.io.BufferedReader;
@@ -16,12 +17,25 @@ import org.json.simple.JSONObject;
 import org.json.simple.JSONValue;
 import org.json.simple.parser.ParseException;
 
+/**
+ * Questa classe esegue la decodifica del file Json,ricava il file csv e scarica tale file nel file system
+ * @author Filippo
+ *
+ */
 public class DownAndDec {
 	
+	/**
+	 * Stringa per il nome del file che verrà scaricato
+	 */
 	private static String filename= "datiprogetto.csv";
 	
-	//Metodo che effettua la decodifica del file Json e trova l'url del file csv da scaricare
-	public static void Decode () {
+	/**
+	 * Metodo che effettua la decodifica del file Json e trova l'url del file csv da scaricare
+	 * @throws ParseException
+	 * @throws IOException
+	 * @throws Exception
+	 */
+	public static void Decode () throws ParseException,IOException,Exception{
 	
 	try {
 		
@@ -66,12 +80,21 @@ public class DownAndDec {
 }
 }
     
-	//Metodo che ritorna il nome del file scaricato
+	
+    /**
+     * Metodo che ritorna il nome del file scaricato
+     * @return ritorna la string con il nome del file
+     */
     public static String getFilename() {
 		return filename;
 	}
 
-    //Metodo che effettua il download effettivo dei dati
+    /**
+     * Metodo che effettua il download effettivo dei dati
+     * @param url stringa per generare l'url per la stream
+     * @param fileName stringa per assegnare il nome al file 
+     * @throws Exception
+     */
     public static void download(String url, String fileName) throws Exception {
     try (InputStream in = URI.create(url).toURL().openStream()) {
         Files.copy(in, Paths.get(fileName));

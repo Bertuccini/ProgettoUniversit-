@@ -15,11 +15,19 @@ import com.esame.progettofinale.DownAndDec;
 import model.StockRecords;
 import service.StockData;
 
+/**
+ * Questa classe tramite richiesta http restituisce i dati e i metadati di una collection
+ * @author Filippo
+ *
+ */
 @RestController
 public class GetData {
 	 
 	
-	//Metodo che restituisce tutti i dati presenti nella collection in formato Json
+	/**
+	 * Metodo che restituisce tutti i dati presenti nella collection in formato Json (/data)
+	 * @return ritorna un vector di oggetti Json
+	 */
 	@GetMapping ("/data")
 	public Vector<JSONObject> getData () {
 		
@@ -42,9 +50,13 @@ public class GetData {
 		return vector;
 	}
 	
-	//Metodo che restituisce i metadati in formato Json
+    /**
+     * Metodo che restituisce i metadati della collection in formato Json (/metadata)
+     * @return ritorna un vector di oggetti Json
+     * @throws FileNotFoundException
+     */
     @GetMapping("/metadata")
-	public Vector<JSONObject>  getMetaData () {
+	public Vector<JSONObject>  getMetaData () throws FileNotFoundException {
 		
     	String filename= DownAndDec.getFilename();
     	Vector<JSONObject> vector =new Vector<JSONObject>();

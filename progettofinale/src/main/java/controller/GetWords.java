@@ -10,11 +10,20 @@ import org.springframework.web.bind.annotation.RestController;
 import model.StockRecords;
 import service.StockData;
 
+/**
+ * Questa classe restituisce le occorrenze delle parole nell'attributo "Indirizzo" tramite richiesta http (/stats)
+ * @author Filippo
+ *
+ */
 @RestController
 @RequestMapping("/stats")
 public class GetWords {
 	
-	//Metodo che effettua la suddivisione degli indirizzi e crea un dizionario delle parole con le relative occorrenze
+	
+	/**
+	 * Metodo che effettua la suddivisione degli indirizzi e crea un dizionario delle parole con le relative occorrenze (/words)
+	 * @return ritorna una hash map con le singole parole e le relative occorrenze
+	 */
 	@GetMapping ("/words")
 	public static HashMap<String, Integer> getWords() {
 
