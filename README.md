@@ -1,6 +1,4 @@
-
-##Progetto per Università
-
+#Progetto  Università
 Questo file detiene la spiegazione del progetto svolto da Andrea Bertuccini e Filippo Bernabucci. Abbiamo implementato le classi del nostro progetto su ambiente di programmazione Eclipse.
 Nel programma principale, con la prima chiamata si esegue la scansione di un indirizzo URL, da cui si ricava un indirizzo URL di un file csv che contiene i dati da scaricare ed esaminare. Una volta scaricato il file si esegue una analisi sintattica al fine di ottenere una collection con Array dinamici che contengono le informazioni di nostro interesse. 
 Successivamente vengono implementate classi al fine di soddisfare le richieste da parte dell’utente. L’utente, attraverso richieste http effettuate mediante browser o Postman, può scegliere quali delle informazioni mandare in output. L’applicazione permette di visionare i metadati, ovvero elenco degli attributi e del tipo, di restituire tutti i dati della collection o di restituire statistiche sui dati specificando l’attributo sul quale effettuare la computazione quali:
